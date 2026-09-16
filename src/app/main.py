@@ -21,10 +21,15 @@ app = FastAPI(
 
 
 @app.get("/")
-def check_health(settings: Annotated[Settings, Depends(get_settings)]):
+def root(settings: Annotated[Settings, Depends(get_settings)]):
     return {
         "service": app_name,
         "version": app_version,
         "environment": settings.app_env,
         "status": "ok",
     }
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
