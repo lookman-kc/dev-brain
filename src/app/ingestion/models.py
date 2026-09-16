@@ -6,3 +6,8 @@ class Document(BaseModel):
     source: str
     document_type: str
     metadata: dict[str, str] = Field(default_factory=dict)
+
+
+class Chunk(BaseModel):
+    content: str
+    metadata: dict[str, str] = Field(default_factory=dict)
