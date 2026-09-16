@@ -1,0 +1,32 @@
+[project]
+name = "DevBrain"
+version = "0.1.0"
+description = "AI-powered knowledge and code assistant for software projects"
+readme = "README.md"
+authors = [
+    { name = "lookman-kc", email = "lookman@kodecreators.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "pydantic-settings>=2.15.0",
+]
+
+[tool.fastapi]
+entrypoint = "app.main:app"
+
+[tool.uv.build-backend]
+module-name = "app"
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
