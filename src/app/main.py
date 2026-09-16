@@ -17,6 +17,7 @@ app = FastAPI(
     description=app_description,
     docs_url=None if app_settings.is_prod_env else "/docs",
     redoc_url=None if app_settings.is_prod_env else "/redoc",
+    openapi_url=None if app_settings.is_prod_env else "/openapi.json",
 )
 
 
